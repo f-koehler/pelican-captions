@@ -51,10 +51,9 @@ pre-commit = "^2.12.1"
 markdown = ["markdown"]
 
 [tool.autopub]
-project-name = "Figures"
-git-username = "botpub"
-git-email = "botpub@autopub.rocks"
-append-github-contributor = true
+project-name = "figures"
+git-username = "f-koehler"
+git-email = "fabian.koehler@protonmail.ch"
 
 [tool.isort]
 # Maintain compatibility with Black
