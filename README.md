@@ -1,8 +1,8 @@
 # captions: A Plugin for Pelican
 
-[![Build Status](https://img.shields.io/github/workflow/status/f-koehler/pelican-figures/build)](https://github.com/f-koehler/pelican-figures/actions)
-[![PyPI Version](https://img.shields.io/pypi/v/pelican-figures)](https://pypi.org/project/pelican-figures/)
-![License](https://img.shields.io/pypi/l/pelican-figures?color=blue)
+[![Build Status](https://img.shields.io/github/workflow/status/f-koehler/pelican-captions/build)](https://github.com/f-koehler/pelican-captions/actions)
+[![PyPI Version](https://img.shields.io/pypi/v/pelican-captions)](https://pypi.org/project/pelican-captions/)
+![License](https://img.shields.io/pypi/l/pelican-captions?color=blue)
 
 Encapsulate standalone images in a figure tag and add a figcaption tag.
 
@@ -22,7 +22,7 @@ Contributions are welcome and much appreciated. Every little bit helps. You can 
 
 To start contributing to this plugin, review the [Contributing to Pelican][] documentation, beginning with the **Contributing Code** section.
 
-[existing issues]: https://github.com/f-koehler/pelican-figures/issues
+[existing issues]: https://github.com/f-koehler/pelican-captions/issues
 [contributing to pelican]: https://docs.getpelican.com/en/latest/contribute.html
 
 ## License
