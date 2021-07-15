@@ -51,6 +51,12 @@ def is_table(element: Tag) -> bool:
     return True
 
 
+def is_figure(element: Tag) -> bool:
+    if element.name != "figure":
+        return False
+    return True
+
+
 def patch_code_block(
     counter: int, element: Tag, label: str, caption: str | None = None
 ):
@@ -107,7 +113,7 @@ def process_content(content: Article | Page):
     content._content = str(soup)
 
 
-class FiguresProcessor:
+class CaptionsProcessor:
     def __init__(self, generators: list[pelican.generators.Generator]):
         self.generators: list[ArticlesGenerator | PagesGenerator] = [
             generator
@@ -142,7 +148,7 @@ class FiguresProcessor:
 
 
 def add_captions(generators: list[pelican.generators.Generator]):
-    FiguresProcessor(generators).process()
+    CaptionsProcessor(generators).process()
 
 
 def register():

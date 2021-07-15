@@ -1,4 +1,4 @@
-# Figures: A Plugin for Pelican
+# captions: A Plugin for Pelican
 
 [![Build Status](https://img.shields.io/github/workflow/status/f-koehler/pelican-figures/build)](https://github.com/f-koehler/pelican-figures/actions)
 [![PyPI Version](https://img.shields.io/pypi/v/pelican-figures)](https://pypi.org/project/pelican-figures/)
