@@ -1,5 +1,5 @@
-# CHANGELOG
 
-## 0.1.0 - 2021-04-22
+0.2.0 - 2021-07-15
+------------------
 
-Implement first version, wrapping standalone images in `<figure>` tags and adding `<figcaption>` if appropriate.
+Rename project to pelican-captions and reimplement the code now supporting code blocks, tables and figures.
