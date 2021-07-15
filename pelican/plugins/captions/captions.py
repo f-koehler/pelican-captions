@@ -53,8 +53,12 @@ def is_table(element: Tag) -> bool:
 
 
 def is_figure(element: Tag) -> bool:
-    if element.name != "figure":
+    if element.name != "p":
         return False
+
+    if not isinstance(element.findChild("img"), Tag):
+        return False
+
     return True
 
 
@@ -78,11 +82,30 @@ def patch_table(counter: int, element: Tag, label: str, caption: str | None = No
         element.append(caption_element)
 
 
+def patch_figure(counter: int, element: Tag, label: str, caption: str | None = None):
+    element.name = "figure"
+    element.attrs["id"] = label
+
+    img_element = element.findChild("img")
+    if not isinstance(img_element, Tag):
+        raise ValueError("invalid figure")
+
+    if not caption:
+        if "alt" in img_element.attrs:
+            caption = img_element.attrs["alt"]
+
+    if caption:
+        caption_element = Tag(name="figcaption")
+        caption_element.string = f"Fig. {counter+1}: {caption}"
+        element.append(caption_element)
+
+
 def process_content(content: Article | Page):
     soup = BeautifulSoup(content._content, "html.parser")
 
     code_block_counter = 0
     table_counter = 0
+    figure_counter = 0
 
     for tag in soup.find_all("p"):
         if not isinstance(tag, Tag):
@@ -107,7 +130,7 @@ def process_content(content: Article | Page):
             patch_table(table_counter, sibling, label, caption)
             table_counter
         elif is_figure(sibling):
-            pass
+            patch_figure(figure_counter, sibling, label, caption)
 
         tag.decompose()
 
