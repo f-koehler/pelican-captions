@@ -3,12 +3,13 @@ from __future__ import annotations
 import logging
 import re
 
-from pelican.plugins import signals
-import pelican.generators
+from bs4 import BeautifulSoup
+from bs4.element import NavigableString, Tag
+
 from pelican import ArticlesGenerator, PagesGenerator
 from pelican.contents import Article, Page
-from bs4 import BeautifulSoup
-from bs4.element import Tag, NavigableString
+import pelican.generators
+from pelican.plugins import signals
 
 LOGGER = logging.getLogger(__name__)
 
