@@ -100,12 +100,33 @@ def patch_figure(counter: int, element: Tag, label: str, caption: str | None = N
         element.append(caption_element)
 
 
+def patch_links(soup: BeautifulSoup, label_id_map: dict[str, int]):
+    for tag in soup.find_all("a"):
+        if not isinstance(tag, Tag):
+            continue
+
+        if "href" not in tag.attrs:
+            continue
+
+        if tag.string:
+            continue
+
+        if not tag.attrs["href"].startswith("#"):
+            continue
+
+        label = tag.attrs["href"][1:]
+
+        tag.string = str(label_id_map[label])
+
+
 def process_content(content: Article | Page):
     soup = BeautifulSoup(content._content, "html.parser")
 
     code_block_counter = 0
     table_counter = 0
     figure_counter = 0
+
+    label_id_map: dict[str, int] = {}
 
     for tag in soup.find_all("p"):
         if not isinstance(tag, Tag):
@@ -126,13 +147,19 @@ def process_content(content: Article | Page):
         if is_code_block(sibling):
             patch_code_block(code_block_counter, sibling, label, caption)
             code_block_counter += 1
+            label_id_map[label] = code_block_counter
         elif is_table(sibling):
             patch_table(table_counter, sibling, label, caption)
-            table_counter
+            table_counter += 1
+            label_id_map[label] = table_counter
         elif is_figure(sibling):
             patch_figure(figure_counter, sibling, label, caption)
+            figure_counter += 1
+            label_id_map[label] = figure_counter
 
         tag.decompose()
+
+    patch_links(soup, label_id_map)
 
     content._content = str(soup)
 
