@@ -1,3 +1,5 @@
-## 0.3.0 - 2021-08-09
 
-Add patching of links to captioned objects.
+0.3.1 - 2021-10-15
+------------------
+
+Code cleanup using an extended pre-commit config.
