@@ -3,6 +3,7 @@
 [![Build Status](https://img.shields.io/github/workflow/status/f-koehler/pelican-captions/build)](https://github.com/f-koehler/pelican-captions/actions)
 [![PyPI Version](https://img.shields.io/pypi/v/pelican-captions)](https://pypi.org/project/pelican-captions/)
 ![License](https://img.shields.io/pypi/l/pelican-captions?color=blue)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/f-koehler/pelican-captions/main.svg)](https://results.pre-commit.ci/latest/github/f-koehler/pelican-captions/main)
 
 Encapsulate standalone images in a figure tag and add a figcaption tag.
 
