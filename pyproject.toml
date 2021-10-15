@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pelican-captions"
-version = "0.3.1"
+version = "0.3.2"
 description = "Add captions and labels to figures, tables and code blocks."
 authors = ["Fabian Köhler <fabian.koehler@protonmail.ch>"]
 license = "AGPL-3.0"
