@@ -63,7 +63,10 @@ def is_figure(element: Tag) -> bool:
 
 
 def patch_code_block(
-    counter: int, element: Tag, label: str, caption: str | None = None
+    counter: int,
+    element: Tag,
+    label: str,
+    caption: str | None = None,
 ):
     element.attrs["id"] = label
 
