@@ -1,3 +1,5 @@
-## 0.3.2 - 2021-10-15
 
-Test compatibility with python 3.10.
+0.3.3 - 2022-01-11
+------------------
+
+Maintenance release to update dependencies.
